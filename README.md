@@ -26,13 +26,15 @@ This tutorial uses Docker Compose and a shell script to set up the required reso
 
 The shell script **setup.sh** provides two commands, *up* and *down*, to start and stop the instances. The compose files are stored in *seatunnel/docker-compose-seatunnel.yaml*, *doris/docker-compose-doris.yaml*, and *superset/docker-compose-superset.yaml*. You can go through these files and make any necessary customization, for example, changing the ports where the instances start or installing additional dependencies.
 
-## Setting up SeaTunnel, Doris, Superset with Docker compose
+## Setting up SeaTunnel, Doris, Superset with Docker Compose
 
 ### Setting up Apache SeaTunnel
 The script launches the SeaTunnel instance at 
 
 ### Setting up Apache Doris
-The script launches the Doris instance at *http://localhost:9000*
+The script launches the Doris FE (front end) instance at *http://localhost:8030*. You can see the following screen, which indicates that the FE has start successfully.
+![doris_fe_login.png](images%2Fdoris_fe_login.png)
+*Note: Here we use the Doris built-in default user (root) to log in with an empty password.*
 
 ### Setting up Apache Superset
 One the *setup.sh* command has completed, visit *http://localhost:8088* to access the Superset UI. Enter *admin* as username and password. Choose Apache Doris from the supported database drop-down, then provide information to finish connection configuration.
