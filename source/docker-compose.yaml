@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  26659ac3_a02b_4a90_b236_1c8f1c122d44:
+    image: 'mysql:latest'
+    restart: 'always'
+    environment:
+      MYSQL_ROOT_PASSWORD: pwd@2023
+      MYSQL_DATABASE: demo
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: pwd@2023
+    volumes:
+      - /data/mysql:/var/lib/mysql
+    networks:
+      - osmds_internal
+
+networks:
+  osmds_internal:
+    external: true
